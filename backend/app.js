@@ -28,6 +28,18 @@ server.get('/produtos/ordenados', (req, res) => {
     })
 })
 
+server.get('/produtos/:id', (req, res) => {
+    const id = req.params.id;
+
+    const sql = 'SELECT * FROM PRODUTO WHERE id_produto = ?';
+    connection.query(sql, [id], (erro, resultados) => {
+        if (erro) {
+            return res.status(500).json({ erro: erro.message })
+        }
+        return res.json(resultados[0]);
+    })
+})
+
 
 server.listen(8070, () => {
     console.log('Servidor rodando na porta 8070');
