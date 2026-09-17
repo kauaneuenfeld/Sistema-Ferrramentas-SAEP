@@ -113,4 +113,4 @@ INSERT INTO `saep_db`.`MOVIMENTACAO_ESTOQUE`
 (2, 2, 'saida', 5, '2026-07-10 14:15:00'),
 (3, 3, 'saida', 12, '2026-08-15 11:00:00');
 
-select * from usuario;
+select * from produto;
